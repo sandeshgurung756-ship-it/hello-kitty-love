@@ -1,3 +1,37 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Days Together 💖</title>
+  <style>
+    body {
+      font-family: "Comic Sans MS", cursive;
+      text-align: center;
+      background-color: #ffe6f0;
+      color: #ff4d88;
+      padding: 50px;
+    }
+    #days {
+      font-size: 48px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="days">0 days</div>
+
+  <script>
+    const startDate = new Date("2025-04-16"); 
+    function updateDays() {
+      const today = new Date("2026-01-20");
+      const diff = today - startDate;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById("days").innerText = `${days} days`;
+    }
+    updateDays();
+    setInterval(updateDays, 1000 * 60 
 
 <!-- 🎀 STYLE (DESIGN) -->
 <style>
