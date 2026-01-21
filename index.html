@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,18 +61,18 @@
   </footer>
 
   <script>
-    const startDate = new Date(2025, 3, 16); // April = 3
+    const startYear = 2025;
+    const startMonth = 4; // April
+    const startDay = 16;
 
     function updateDays() {
       const today = new Date();
-      const start = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
-      const now = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-      const days = Math.floor((now - start) / 86400000);
-      document.getElementById("days").innerText = days + " days";
+      const startDate = new Date(startYear, startMonth - 1, startDay);
+      const diff = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+      document.getElementById("days").innerText = diff + " days";
     }
 
     updateDays();
-    setInterval(updateDays, 1000 * 60 * 60); // updates every hour
   </script>
 
 </body>
